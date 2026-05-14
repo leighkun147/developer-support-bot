@@ -1,8 +1,11 @@
+
 # 🤖 Developer Support Bot
 
-A Python-based developer support assistant for junior engineers, with Human-In-The-Loop (HITL), Human-On-The-Loop (HOTL), and Human-Out-Of-The-Loop (HOOTL) modes. It combines a knowledge base with real-time escalation to a senior engineer for critical or unknown issues.
+An intelligent, API-free Python assistant for junior developers. This project features three support modes—Human-In-The-Loop (HITL), Human-On-The-Loop (HOTL), and Human-Out-Of-The-Loop (HOOTL)—to deliver instant, typo-tolerant help for Python errors. All answers are generated **without calling any external APIs**: the bot relies solely on the curated knowledge base in `bilgi.txt` and, when needed, escalates to a senior engineer via `operator.py` for expert guidance. This ensures privacy, reliability, and full offline operation.
+
 
 ## 🚀 Features
+- **No APIs, No Cloud, No LLMs:** All answers are generated locally using only the information in `bilgi.txt`—no internet connection or external services required.
 - **HOOTL:** Answers common errors using a knowledge base (`bilgi.txt`).
 - **HITL:** Forwards all questions to a senior engineer via `operator.py`.
 - **HOTL:** Answers automatically unless the issue is risky or uncertain, then escalates to a human.
@@ -28,8 +31,9 @@ python3 operator.py
 python3 bot.py hootl   # or hitl, hotl
 ```
 
+
 ## 🎯 Project Goal
-Empower junior developers with instant, typo-tolerant error help, while ensuring critical or ambiguous issues are escalated to a senior engineer for safe, high-quality support.
+Empower junior developers with instant, typo-tolerant error help, while ensuring critical or ambiguous issues are escalated to a senior engineer for safe, high-quality support. All logic is transparent and local—no hidden API calls, no external dependencies, just pure Python and your own knowledge base.
 
 ## 📄 License
 MIT
