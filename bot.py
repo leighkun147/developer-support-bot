@@ -82,12 +82,39 @@ def wait_for_operator(filename, last_pos):
 
 def contains_danger(text):
     # Turkce yorum: Tehlikeli anahtar kelimeleri kontrol eder.
-    danger_words = ["database", "production", "crash", "fire", "deleted"]
+    danger_words = [
+        "database",
+        "db",
+        "production",
+        "prod",
+        "deleted",
+        "drop",
+        "crash",
+        "security",
+        "auth",
+        "payment",
+        "money",
+        "deployment",
+        "deploy",
+    ]
     text_lower = text.lower()
     for word in danger_words:
         if word in text_lower:
             return True
     return False
+
+def build_hotl_escalation_reason(user_input, idx, dist):
+    # Turkce yorum: HOTL modunda neden operator'a yonlendirme yapildigini aciklar.
+    reasons = []
+    if contains_danger(user_input):
+        reasons.append("tehlikeli anahtar kelime")
+    if dist is None or idx == -1:
+        reasons.append("bilgi tabaninda benzer eslesme bulunamadi")
+    elif dist > 4:
+        reasons.append("yuksek belirsizlik (Levenshtein mesafesi > 4)")
+    if not reasons:
+        return "operator'a yonlendirme karari verildi"
+    return ", ".join(reasons)
 
 def main():
     if len(sys.argv) < 2:
@@ -140,6 +167,8 @@ def main():
         danger = contains_danger(user_input)
 
         if danger or dist is None or idx == -1 or dist > 4:
+            reason = build_hotl_escalation_reason(user_input, idx, dist)
+            print("HOTL: " + reason + " -> operator'a yonlendiriliyor.")
             last_pos = write_to_queue(user_input, kuyruk_file)
             response, last_pos = wait_for_operator(kuyruk_file, last_pos)
             print("Senior Engineer: " + response)
