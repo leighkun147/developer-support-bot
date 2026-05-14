@@ -1,0 +1,6 @@
+# Ignore queue and output files
+kuyruk.txt
+hootl_out.txt
+hitl_out.txt
+hotl_out.txt
+test_script.sh

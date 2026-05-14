@@ -1,0 +1,20 @@
+SyntaxError: Check your code for missing colons, parentheses, or incorrect syntax structure.
+IndentationError: Ensure all code blocks use consistent indentation (spaces or tabs, not both).
+ModuleNotFoundError: Verify the module name is correct and installed in your environment using pip.
+KeyError: Make sure the dictionary key exists before accessing it, or use dict.get() for a default value.
+TypeError: Check that you are using the correct data types for operations and function arguments.
+ZeroDivisionError: Prevent division by zero by validating the denominator before dividing.
+RecursionError: Refactor your code to use iteration or increase the recursion limit if necessary.
+ConnectionRefusedError: Confirm the server is running and the host/port are correct for network connections.
+FileNotFoundError: Check the file path and ensure the file exists before attempting to open it.
+AttributeError: Ensure the object has the attribute you are trying to access, and check for typos.
+ValueError: Validate input values and ensure they are within the expected range or format.
+ImportError: Confirm the module or function exists and is spelled correctly in your import statement.
+IndexError: Make sure your list or tuple index is within the valid range before accessing it.
+NameError: Declare variables before using them and check for typos in variable names.
+TimeoutError: Increase the timeout duration or optimize the code to complete within the allowed time.
+PermissionError: Check file or directory permissions and run your script with appropriate access rights.
+MemoryError: Optimize your code to use less memory or increase available system memory.
+OverflowError: Use data types that can handle larger values or check for value limits in calculations.
+BrokenPipeError: Handle closed connections gracefully and ensure the receiving end is ready for data.
+UnboundLocalError: Declare and initialize variables before referencing them within a function.
