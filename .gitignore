@@ -4,3 +4,6 @@ hootl_out.txt
 hitl_out.txt
 hotl_out.txt
 test_script.sh
+
+# Python cache
+__pycache__/
