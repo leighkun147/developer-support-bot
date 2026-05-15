@@ -1,5 +1,5 @@
 
-# 🤖 Developer Support Bot
+# 🤖 AGENT-LOOP-FRAMEWORK 
 
 An intelligent, API-free Python assistant for junior developers. This project features three support modes—Human-In-The-Loop (HITL), Human-On-The-Loop (HOTL), and Human-Out-Of-The-Loop (HOOTL)—to deliver instant, typo-tolerant help for Python errors. All answers are generated **without calling any external APIs**: the bot relies solely on the curated knowledge base in `bilgi.txt` and, when needed, escalates to a senior engineer via `operator.py` for expert guidance. This ensures privacy, reliability, and full offline operation.
 
